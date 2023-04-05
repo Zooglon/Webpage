@@ -3,14 +3,44 @@ body {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container {
+  height: 400vh;
+  background-color: aqua;
+}
+
+.fadeOut {
+  display: none;
+}
+
+.fadeIn {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
-  background: lime;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 2s;
+  // animation-name: fade;
+  // animation-duration: 1s;
+  ::before {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

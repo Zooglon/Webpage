@@ -1,14 +1,12 @@
-import Box from "../Box";
 import "./Page.style.scss";
+import { FC, ReactNode } from "react";
 
-const Page = () => {
-  return (
-    <section className="page__container">
-      <Box height="0px">
-        <p>hello world</p>
-      </Box>
-    </section>
-  );
+type PageProps = {
+  children?: ReactNode;
+};
+
+const Page: FC<PageProps> = ({ children }) => {
+  return <section className="page__container">{children}</section>;
 };
 
 export default Page;

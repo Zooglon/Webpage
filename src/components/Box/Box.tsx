@@ -19,6 +19,7 @@ type BoxProps = {
   alignItems?: string;
   maxWidth?: string;
   maxHeight?: string;
+  className?: string;
 };
 
 type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
@@ -42,6 +43,7 @@ const Box: FC<BoxProps> = ({
   alignItems,
   maxWidth,
   maxHeight,
+  className,
 }) => {
   let flexDirection = row ? "row" : col ? "column" : "row";
   if (reverse) flexDirection += "-reverse";
@@ -69,6 +71,7 @@ const Box: FC<BoxProps> = ({
         maxWidth,
         maxHeight,
       }}
+      className={className}
     >
       {children}
     </div>
